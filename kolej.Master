@@ -1,0 +1,362 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="kolej.master.vb" Inherits="kpmkv.kolej" %>
+<%@ Register Src="commoncontrol/kolej_view_master.ascx" TagName="kolej_view_master"
+    TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>APLIKASI PENGURUSAN PENTAKSIRAN. KOLEJ VOKASIONAL</title>
+
+    <meta name="robots" content="noindex" />
+    <meta content="" name="Keywords" />
+    <meta content="Global" name="Distribution" />
+    <meta content="jjamain@yahoo.com" name="Author" />
+    <meta content="index,follow" name="Robots" />
+    <link href="~/css/portal.default.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="img/faviconkpm.png" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+            width: 100%;
+            text-decoration: none;
+            outline-style: none;
+            padding: 8px 5px 8px 5px;
+            font-weight: bolder;
+            text-align: left;
+            vertical-align: top;
+            background: #CCCC66;
+            color: #FFFFFF;
+            height: 32px;
+        }
+    </style>
+</head>
+<body class="fbbody">
+    <form id="myform" runat="server">
+        <table style="width: 100%; border: solid 0px #000000;">
+            <tr>
+                <td colspan="3">
+                    <table class="fbheader_menu">
+                        <tr>
+                            <td style="width: 60%; text-align: left;">
+                                <a href="admin.default.aspx">APLIKASI PENGURUSAN PENTAKSIRAN. KOLEJ VOKASIONAL</a>
+                            </td>
+                            <td style="width: 40%; text-align: right;">
+                                <a href="admin.notification.list.aspx">Pengumuman</a>|<a href="logout.aspx?msg=Logout!">Logout</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; vertical-align: top;">
+                    <uc1:kolej_view_master ID="kolej_view_master1" runat="server" />
+                    &nbsp;
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;"
+                        border="0px">
+                        <tr>
+                            <td colspan="2">CARIAN
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.kolej.search.aspx" rel="nofollow" target="_self">Carian Kolej</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.pelajar.search.aspx" rel="nofollow" target="_self">Carian Pelajar</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.pensyarah.search.aspx" rel="nofollow" target="_self">Carian Pensyarah</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;"
+                        border="0px">
+                        <tr>
+                            <td class="fbnav_header" colspan="2">AKADEMIK
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Pentaksiran Berterusan</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Penilaian Akhir</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.pusatujian.schedule.aspx" rel="nofollow" target="_self">Paparan Keputusan</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;"
+                        border="0px">
+                        <tr>
+                            <td class="fbnav_header" colspan="2">VOKASIONAL
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Pentaksiran Berterusan</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Penilaian Akhir</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.pusatujian.schedule.aspx" rel="nofollow" target="_self">Paparan Keputusan</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;" border="0px">
+                        <tr>
+                            <td class="fbnav_header" colspan="2">LAPORAN
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/note.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Gred Keseluruhan</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/note.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Paparan Keseluruhan</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/note.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="" rel="nofollow" target="_self">Paparan PNG dan PNGK</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/note.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.pusatujian.schedule.aspx" rel="nofollow" target="_self">Maklumat PNG
+                                Kolej</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;" border="0px">
+                        <tr>
+                            <td class="fbnav_header" colspan="2">PENYELENGGARAAN
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.kolej.search.aspx" rel="nofollow" target="_self">Kolej</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="kolej.kursus.list.aspx" rel="nofollow" target="_self">Kursus</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.modul.search.aspx" rel="nofollow" target="_self">Modul</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.users.search.aspx" rel="nofollow" target="_self">Pengguna</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.notification.search.aspx" rel="nofollow" target="_self">Pengumuman</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.gred.list.aspx" rel="nofollow" target="_self">Gred</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.wajaran.search.aspx" rel="nofollow" target="_self">Wajaran</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; text-align: left; vertical-align: top; border: none 0px;"
+                        border="0px">
+                        <tr>
+                            <td class="fbnav_header" colspan="2">LAIN-LAIN
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.audit.search.aspx" rel="nofollow" target="_self">Audit Trail</a>
+                            </td>
+                        </tr>
+                        <tr class="fbnav_items">
+                            <td style="width: 1%;">
+                                <img style="vertical-align: middle;" src="icons/friend.png" width="16px" height="16px"
+                                    alt="::" />
+                            </td>
+                            <td class="fbnav_items">
+                                <a href="admin.help.aspx" rel="nofollow" target="_self">Panduan Aplikasi</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="img/white_space.jpg" name="space" border="0" width="250px" height="150px"
+                                    alt="kpmkv" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 80%; vertical-align: top;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center; vertical-align: top;">
+                    <table style="width: 100%; text-align: center; vertical-align: top; border: none 0px;"
+                        border="0px">
+                        <tr>
+                            <td>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fbfooter">|&nbsp; © 2014 Lembaga Peperiksaan. Kementerian Pendidikan Malaysia.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Untuk skrin 1024 X 768 dan ke atas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblFooterMsg" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
