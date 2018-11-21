@@ -1191,7 +1191,8 @@ Public Class sijil_vok_malaysia1
                 Dim fontPath As String = String.Concat(Server.MapPath("~/font/"))
                 Dim bfAgency As BaseFont = BaseFont.CreateFont(fontPath & "agency.ttf", BaseFont.CP1252, BaseFont.EMBEDDED)
 
-                Dim agencyFont As iTextSharp.text.Font = New iTextSharp.text.Font(bfAgency, 13)
+                Dim agencyFont As iTextSharp.text.Font = New iTextSharp.text.Font(bfAgency, 15)
+                '' changed fontsize from 13 to 15 21112018
 
                 table = New PdfPTable(3)
                 table.WidthPercentage = 100
