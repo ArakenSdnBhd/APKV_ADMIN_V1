@@ -652,7 +652,7 @@ Public Class sijil_vok_malaysia1
                 ''getting data end
 
                 Dim table As New PdfPTable(3)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({42, 16, 42})
                 table.DefaultCell.Border = 0
 
@@ -687,7 +687,7 @@ Public Class sijil_vok_malaysia1
 
                 ''NAMA
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -721,7 +721,7 @@ Public Class sijil_vok_malaysia1
 
                 ''NO. KAD PENGENALAN
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -755,7 +755,7 @@ Public Class sijil_vok_malaysia1
 
                 ''ANGKA GILIRAN
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -789,7 +789,7 @@ Public Class sijil_vok_malaysia1
 
                 ''INSTITUSI
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -823,7 +823,7 @@ Public Class sijil_vok_malaysia1
 
                 ''KLUSTER
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -857,7 +857,7 @@ Public Class sijil_vok_malaysia1
 
                 ''KURSUS
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 28, 3, 64})
 
                 cell = New PdfPCell()
@@ -902,7 +902,7 @@ Public Class sijil_vok_malaysia1
 
 
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 75, 15, 5})
                 table.DefaultCell.Border = 0
 
@@ -941,7 +941,7 @@ Public Class sijil_vok_malaysia1
                 'Kluster---------------------------------------------------------------------------
 
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 75, 15, 5})
                 table.DefaultCell.Border = 0
 
@@ -980,7 +980,7 @@ Public Class sijil_vok_malaysia1
                 'pngka---------------------------------------------------------------------------
 
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 75, 15, 5})
                 table.DefaultCell.Border = 0
 
@@ -1018,7 +1018,7 @@ Public Class sijil_vok_malaysia1
                 'pngkv----------------------------------------------------------------------------
 
                 table = New PdfPTable(4)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 75, 15, 5})
                 table.DefaultCell.Border = 0
 
@@ -1059,7 +1059,7 @@ Public Class sijil_vok_malaysia1
                 'footer------------------------------------------------------------------------------
                 If strStatus = "SETARA" Then
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 103
                     table.SetWidths({0, 90, 5})
                     table.DefaultCell.Border = 0
 
@@ -1088,7 +1088,7 @@ Public Class sijil_vok_malaysia1
                     myDocument.Add(table)
 
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 103
                     table.SetWidths({0, 90, 5})
                     table.DefaultCell.Border = 0
 
@@ -1117,7 +1117,7 @@ Public Class sijil_vok_malaysia1
                     myDocument.Add(table)
 
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 103
                     table.SetWidths({0, 90, 5})
                     table.DefaultCell.Border = 0
 
@@ -1169,7 +1169,7 @@ Public Class sijil_vok_malaysia1
 
                 'Dim imageHeader As String = Server.MapPath(fileSavePath)
                 Dim imgHeader As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imageHeader)
-                imgHeader.ScalePercent(21)
+                imgHeader.ScalePercent(20)
                 imgHeader.SetAbsolutePosition(410, 32)
 
                 myDocument.Add(imgHeader)
@@ -1195,7 +1195,7 @@ Public Class sijil_vok_malaysia1
                 '' changed fontsize from 13 to 15 21112018
 
                 table = New PdfPTable(3)
-                table.WidthPercentage = 100
+                table.WidthPercentage = 103
                 table.SetWidths({0, 90, 5})
                 table.SetExtendLastRow(True, True)
                 table.DefaultCell.Border = 1
