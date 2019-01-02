@@ -198,9 +198,9 @@ Public Class admin_reportFIK
             Dim strKolejID As String = CType(datRespondent.Rows(i).FindControl("KolejRecordID"), Label).Text
 
 
-            strSQL = "SELECT COUNT(MYKAD) AS LAYAKSVM FROM kpmkv_SVM"
+            strSQL = "SELECT COUNT(LayakID) AS LAYAKSVM FROM kpmkv_SVM"
             strSQL += " WHERE Semester='4' AND IsBMTahun ='" & ddlTahun.Text & "' AND Sesi ='" & chkSesi.Text & "'"
-            strSQL += " AND IsLayak='1' AND IsPNGKA ='1' AND IsPNGKV ='1' AND IsSETARA ='1' AND KolejRecordID='" & strKolejID & "'"
+            strSQL += " AND LayakSVM = '1' AND KolejRecordID='" & strKolejID & "'"
             CType(datRespondent.Rows(i).FindControl("C_Layak"), Label).Text = oCommon.getFieldValue(strSQL)
         Next
 

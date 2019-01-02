@@ -52,6 +52,7 @@
   <ItemGroup>
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <SpecificVersion>False</SpecificVersion>
@@ -148,8 +149,13 @@
     <Content Include="admin.wajaran.search.aspx" />
     <Content Include="admin.wajaranvokasional.search.aspx" />
     <Content Include="admin_data_transkrip.aspx" />
+    <Content Include="bin\itextsharp.dll" />
     <Content Include="bin\kpmkv.dll" />
     <Content Include="bin\kpmkv.pdb" />
+    <Content Include="bin\kpmkv.xml" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\RKLib.ExportData.dll" />
+    <Content Include="bin\stdole.dll" />
     <Content Include="BMSETARADash.aspx" />
     <Content Include="commoncontrol\admin_accessright.ascx" />
     <Content Include="commoncontrol\admin_borang_markah_khas.ascx" />
@@ -524,6 +530,10 @@
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll" />
     <Content Include="packages\AjaxControlToolkit.18.1.0\readme.txt" />
+    <Content Include="packages\iTextSharp.5.5.13\AGPL.txt" />
+    <Content Include="packages\iTextSharp.5.5.13\lib\itextsharp.dll" />
+    <Content Include="packages\iTextSharp.5.5.13\lib\iTextSharp.xml" />
+    <Content Include="packages\iTextSharp.5.5.13\notice.txt" />
     <Content Include="pelajar.angkagiliran.aspx" />
     <Content Include="pelajar.create.aspx" />
     <Content Include="pelajar.import.aspx" />
@@ -3153,6 +3163,7 @@
     <Content Include="font\timesbi.ttf" />
     <Content Include="font\timesi.ttf" />
     <Content Include="font\agency.ttf" />
+    <Content Include="bin\kpmkv.dll.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -3174,6 +3185,7 @@
     <Content Include="packages\AjaxControlToolkit.18.1.0\AjaxControlToolkit.18.1.0.nupkg" />
     <Content Include="packages\AjaxControlToolkit.18.1.0\Content\Web.config.transform" />
     <Content Include="packages\repositories.config" />
+    <Content Include="packages\iTextSharp.5.5.13\iTextSharp.5.5.13.nupkg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
