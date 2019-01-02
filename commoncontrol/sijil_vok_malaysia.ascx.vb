@@ -1169,7 +1169,7 @@ Public Class sijil_vok_malaysia1
 
                 'Dim imageHeader As String = Server.MapPath(fileSavePath)
                 Dim imgHeader As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(imageHeader)
-                imgHeader.ScalePercent(20)
+                imgHeader.ScalePercent(22)
                 imgHeader.SetAbsolutePosition(410, 32)
 
                 myDocument.Add(imgHeader)
