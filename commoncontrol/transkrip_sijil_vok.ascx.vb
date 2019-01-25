@@ -1678,50 +1678,57 @@ Public Class transkrip_sijil_vok1
 
                     ''get jumlah jam kredit akademik
                     ''sem1
-                    strSQL = "SELECT SUM(JamKredit) as JK1 FROM kpmkv_matapelajaran"
-                    strSQL += " WHERE Tahun ='" & strtahun1 & "'"
-                    strSQL += " AND Semester= '1'"
-                    If strAgama = "ISLAM" Then
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
-                    Else
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
-                    End If
-                    Dim JK1 As Integer = oCommon.getFieldValue(strSQL)
 
-                    ''''sem2
-                    strSQL = "SELECT SUM(JamKredit) as JK2 FROM kpmkv_matapelajaran"
-                    strSQL += " WHERE Tahun ='" & strtahun2 & "'"
-                    strSQL += " AND Semester= '2'"
-                    If strAgama = "ISLAM" Then
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
-                    Else
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
-                    End If
-                    Dim JK2 As Integer = oCommon.getFieldValue(strSQL)
+                    'strSQL = "SELECT SUM(JamKredit) as JK1 FROM kpmkv_matapelajaran"
+                    'strSQL += " WHERE Tahun ='" & strtahun1 & "'"
+                    'strSQL += " AND Semester= '1'"
+                    'If strAgama = "ISLAM" Then
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
+                    'Else
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
+                    'End If
+                    'Dim JK1 As Integer = oCommon.getFieldValue(strSQL)
 
-                    ''''sem3
-                    strSQL = "SELECT SUM(JamKredit) as JK3 FROM kpmkv_matapelajaran"
-                    strSQL += " WHERE Tahun ='" & strtahun3 & "'"
-                    strSQL += " AND Semester= '3'"
-                    If strAgama = "ISLAM" Then
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
-                    Else
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
-                    End If
-                    Dim JK3 As Integer = oCommon.getFieldValue(strSQL)
+                    '''''sem2
+                    'strSQL = "SELECT SUM(JamKredit) as JK2 FROM kpmkv_matapelajaran"
+                    'strSQL += " WHERE Tahun ='" & strtahun2 & "'"
+                    'strSQL += " AND Semester= '2'"
+                    'If strAgama = "ISLAM" Then
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
+                    'Else
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
+                    'End If
+                    'Dim JK2 As Integer = oCommon.getFieldValue(strSQL)
 
-                    ''''sem4
-                    strSQL = "SELECT SUM(JamKredit) as JK4 FROM kpmkv_matapelajaran"
-                    strSQL += " WHERE Tahun ='" & strtahun4 & "'"
-                    strSQL += " AND Semester= '4'"
-                    If strAgama = "ISLAM" Then
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
-                    Else
-                        strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
-                    End If
-                    Dim JK4 As Integer = oCommon.getFieldValue(strSQL)
+                    '''''sem3
+                    'strSQL = "SELECT SUM(JamKredit) as JK3 FROM kpmkv_matapelajaran"
+                    'strSQL += " WHERE Tahun ='" & strtahun3 & "'"
+                    'strSQL += " AND Semester= '3'"
+                    'If strAgama = "ISLAM" Then
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
+                    'Else
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
+                    'End If
+                    'Dim JK3 As Integer = oCommon.getFieldValue(strSQL)
 
-                    Dim TotalJK As Integer = JK1 + JK2 + JK3 + JK4
+                    '''''sem4
+                    'strSQL = "SELECT SUM(JamKredit) as JK4 FROM kpmkv_matapelajaran"
+                    'strSQL += " WHERE Tahun ='" & strtahun4 & "'"
+                    'strSQL += " AND Semester= '4'"
+                    'If strAgama = "ISLAM" Then
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN MORAL%')"
+                    'Else
+                    '    strSQL += " AND NamaMataPelajaran NOT like ('PENDIDIKAN ISLAM%')"
+                    'End If
+                    'Dim JK4 As Integer = oCommon.getFieldValue(strSQL)
+
+                    'Dim TotalJK As Integer = JK1 + JK2 + JK3 + JK4
+
+                    strSQL = " SELECT Jum_JamKredit_Akademik FROM kpmkv_pelajar_markah"
+                    strSQL = " WHERE PelajarID = '" & strkey & "'"
+                    strSQL = " AND Semester = '4'"
+
+                    Dim TotalJK As Integer = oCommon.getFieldValue(strSQL)
 
                     cell = New PdfPCell()
                     cetak = "JUMLAH JAM KREDIT AKADEMIK"
