@@ -1665,7 +1665,7 @@ Public Class transkrip_sijil_vok1
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
-                    cetak = strPNGKA
+                    cetak = FormatNumber(CDbl(strPNGKA), 2)
                     cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 7)))
                     cell.Border = 0
                     table.AddCell(cell)
@@ -1725,8 +1725,8 @@ Public Class transkrip_sijil_vok1
                     'Dim TotalJK As Integer = JK1 + JK2 + JK3 + JK4
 
                     strSQL = " SELECT Jum_JamKredit_Akademik FROM kpmkv_pelajar_markah"
-                    strSQL = " WHERE PelajarID = '" & strkey & "'"
-                    strSQL = " AND Semester = '4'"
+                    strSQL += " WHERE PelajarID = '" & strkey & "'"
+                    strSQL += " AND Semester = '4'"
 
                     Dim TotalJK As Integer = oCommon.getFieldValue(strSQL)
 
@@ -1782,7 +1782,7 @@ Public Class transkrip_sijil_vok1
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
-                    cetak = strPNGKV
+                    cetak = FormatNumber(CDbl(strPNGKV), 2)
                     cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 7)))
                     cell.Border = 0
                     table.AddCell(cell)
@@ -1871,7 +1871,7 @@ Public Class transkrip_sijil_vok1
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
-                    cetak = strPNGKK
+                    cetak = FormatNumber(CDbl(strPNGKK), 2)
                     cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 7)))
                     cell.Border = 0
                     table.AddCell(cell)
