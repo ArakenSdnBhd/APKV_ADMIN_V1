@@ -879,7 +879,7 @@ Public Class sijil_vok_malaysia1
                 table.AddCell(cell)
 
                 cell = New PdfPCell()
-                cetak = strprogram & " (" & strkodKursus & ")"
+                cetak = strprogram
                 cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
                 cell.Border = 0
                 table.AddCell(cell)
