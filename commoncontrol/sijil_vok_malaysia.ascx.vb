@@ -609,7 +609,6 @@ Public Class sijil_vok_malaysia1
 
         For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
 
-
             Dim cb As CheckBox = datRespondent.Rows(i).FindControl("chkSelect")
 
             If cb.Checked = True Then
@@ -1000,7 +999,7 @@ Public Class sijil_vok_malaysia1
 
                 cell = New PdfPCell()
                 cetak = ""
-                cetak += strPNGKA
+                cetak += FormatNumber(CDbl(strPNGKA), 2)
                 cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
                 cell.Border = 0
                 table.AddCell(cell)
@@ -1038,7 +1037,7 @@ Public Class sijil_vok_malaysia1
 
                 cell = New PdfPCell()
                 cetak = ""
-                cetak += strPNGKV
+                cetak += FormatNumber(CDbl(strPNGKV), 2)
                 cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
                 cell.Border = 0
                 table.AddCell(cell)
