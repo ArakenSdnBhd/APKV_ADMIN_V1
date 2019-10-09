@@ -381,7 +381,7 @@ Public Class slip_SJ1251
                     ''getting data end
 
                     Dim table As New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({42, 16, 42})
                     table.DefaultCell.Border = 0
 
@@ -406,14 +406,14 @@ Public Class slip_SJ1251
                     Dim cetak = Environment.NewLine & ""
 
                     table = New PdfPTable(1)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({100})
 
                     ''timesbd font
                     Dim fontPath As String = String.Concat(Server.MapPath("~/font/"))
                     Dim bfTimesbd As BaseFont = BaseFont.CreateFont(fontPath & "timesbd.ttf", BaseFont.CP1252, BaseFont.EMBEDDED)
 
-                    Dim timesbdFont As iTextSharp.text.Font = New iTextSharp.text.Font(bfTimesbd, 12)
+                    Dim timesbdFont As iTextSharp.text.Font = New iTextSharp.text.Font(bfTimesbd, 11)
 
                     cell = New PdfPCell()
                     cetak = "Calon yang tersebut namanya di bawah telah mengambil peperiksaan Sejarah 1251 dan menunjukkan" & Environment.NewLine
@@ -433,24 +433,24 @@ Public Class slip_SJ1251
 
                     ''NAMA
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
                     cetak = "NAMA"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
-                    cetak = strname
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cetak = strName
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -461,24 +461,24 @@ Public Class slip_SJ1251
 
                     ''NO. KAD PENGENALAN
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
                     cetak = "NO.KAD PENGENALAN"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = strMykad
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -489,24 +489,24 @@ Public Class slip_SJ1251
 
                     ''ANGKA GILIRAN
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
                     cetak = "ANGKA GILIRAN"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
-                    cetak = strag
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cetak = strAG
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -517,49 +517,49 @@ Public Class slip_SJ1251
 
                     ''INSTITUSI
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
                     cetak = "INSTITUSI"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = strKolejnama & ", " & strKolejnegeri
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     myDocument.Add(table)
 
-                    ''KLUSTER
+                    ''BIDANG
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
-                    cetak = "KLUSTER"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cetak = "BIDANG"
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = strNamaKluster
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -568,26 +568,26 @@ Public Class slip_SJ1251
 
 
 
-                    ''KURSUS
+                    ''PROGRAM
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
-                    cetak = "KURSUS"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cetak = "PROGRAM"
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = " : "
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = strNamaKursus
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -606,42 +606,42 @@ Public Class slip_SJ1251
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                     table = New PdfPTable(5)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 4, 50, 18, 1})
 
                     cell = New PdfPCell()
                     cetak = "KOD"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = "MATA PELAJARAN"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = "GRED"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     myDocument.Add(table)
 
-                    strSQL = "SELECT Kompetensi from kpmkv_pelajar_Akademik_Ulang where AngkaGiliran = '" & strag & "'"
+                    strSQL = "SELECT Kompetensi from kpmkv_pelajar_Akademik_Ulang where AngkaGiliran = '" & strAG & "'"
                     strSQL += " AND Tahun='" & ddlTahun.Text & "'"
                     strSQL += " AND Sesi='" & chkSesi.Text & "'"
                     Dim strKompetensi As String = oCommon.getFieldValue(strSQL)
@@ -651,40 +651,40 @@ Public Class slip_SJ1251
 
 
                     table = New PdfPTable(5)
-                    table.WidthPercentage = 102
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 4, 50, 18, 1})
 
                     cell = New PdfPCell()
                     cetak = ""
                     cetak += "1251"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
                     cetak += "SEJARAH"
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
                     cetak += strKompetensi
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
                     cell = New PdfPCell()
                     cetak = ""
                     cetak += ""
-                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 11)))
+                    cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 10)))
                     cell.Border = 0
                     table.AddCell(cell)
 
@@ -693,13 +693,13 @@ Public Class slip_SJ1251
 
                     myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
-                    myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing) 08102019 2
+                    'myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing) 08102019
+                    'myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
 
                     ''TT
                     strSQL = " Select FileLocation FROM kpmkv_config_pengarahPeperiksaan WHERE ID='" & ddlSign.SelectedValue & "'"
@@ -709,8 +709,8 @@ Public Class slip_SJ1251
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     Dim imgHeader As Image = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(23)
-                    imgHeader.SetAbsolutePosition(355, 75)
+                    imgHeader.ScalePercent(20)
+                    imgHeader.SetAbsolutePosition(355, 170)
 
                     myDocument.Add(imgHeader)
 
@@ -722,11 +722,10 @@ Public Class slip_SJ1251
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     imgHeader = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(40)
-                    imgHeader.SetAbsolutePosition(35, 10)
+                    imgHeader.ScalePercent(36)
+                    imgHeader.SetAbsolutePosition(85, 80)
 
                     myDocument.Add(imgHeader)
-
 
                     myDocument.NewPage()
                     ''--content end

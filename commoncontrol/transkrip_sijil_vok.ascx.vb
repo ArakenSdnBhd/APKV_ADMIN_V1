@@ -1384,10 +1384,14 @@ Public Class transkrip_sijil_vok1
                     Dim ds7 As DataSet = New DataSet
                     sqlDA7.Fill(ds7, "AnyTable")
 
+                    Dim spaceCount As Integer
 
                     Dim subj6 As Integer = ds7.Tables(0).Rows.Count - 1
 
                     For iloop As Integer = 0 To subj6
+
+                        spaceCount = 0
+
                         ''get gred from pelajar_markah
                         Dim ColGredV3 As String = (ds7.Tables(0).Rows(iloop).Item(3).ToString())
 
@@ -1398,22 +1402,55 @@ Public Class transkrip_sijil_vok1
                         Dim subjcode7 As String = (ds7.Tables(0).Rows(iloop).Item(0).ToString())
                         subjcode7 = subjcode7.Replace(vbCr, "").Replace(vbLf, "")
 
-                        If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 41 Then
+                        For Each c As Char In ds7.Tables(0).Rows(iloop).Item(1).ToString
+
+                            If c = " " Then
+                                spaceCount = spaceCount + 1
+                            End If
+
+                        Next
+
+                        If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+
                             cetakCode3 += subjcode7 & Environment.NewLine
+
                         Else
-                            cetakCode3 += subjcode7 & Environment.NewLine & Environment.NewLine
+
+                            If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 40 And spaceCount > 4 Then
+
+                                cetakCode3 += subjcode7 & Environment.NewLine
+
+                            Else
+
+                                cetakCode3 += subjcode7 & Environment.NewLine & Environment.NewLine
+
+                            End If
+
                         End If
 
 
                         cetakSub3 += ds7.Tables(0).Rows(iloop).Item(1).ToString & Environment.NewLine
 
 
-                        If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 41 Then
+                        If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+
                             cetakJam3 += ds7.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
                             cetakGred3 += "    " & strGredV3 & Environment.NewLine
+
                         Else
-                            cetakJam3 += ds7.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine & Environment.NewLine
-                            cetakGred3 += "    " & strGredV3 & Environment.NewLine & Environment.NewLine
+
+                            If ds7.Tables(0).Rows(iloop).Item(1).ToString.Length < 40 And spaceCount > 4 Then
+
+                                cetakJam3 += ds7.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
+                                cetakGred3 += "    " & strGredV3 & Environment.NewLine
+
+                            Else
+
+                                cetakJam3 += ds7.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine & Environment.NewLine
+                                cetakGred3 += "    " & strGredV3 & Environment.NewLine & Environment.NewLine
+
+                            End If
+
                         End If
 
 
@@ -1531,6 +1568,9 @@ Public Class transkrip_sijil_vok1
                     Dim subj9 As Integer = ds9.Tables(0).Rows.Count - 1
 
                     For iloop As Integer = 0 To subj9
+
+                        spaceCount = 0
+
                         ''get gred from pelajar_markah
                         Dim ColGredV4 As String = (ds9.Tables(0).Rows(iloop).Item(3).ToString())
 
@@ -1538,26 +1578,59 @@ Public Class transkrip_sijil_vok1
                         strSQL += " WHERE PelajarID='" & strPelajarID4 & "'"
                         Dim strGredV4 As String = oCommon.getFieldValue(strSQL)
 
-
                         Dim subjcode9 As String = (ds9.Tables(0).Rows(iloop).Item(0).ToString())
                         subjcode9 = subjcode9.Replace(vbCr, "").Replace(vbLf, "")
 
-                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 41 Then
+                        For Each c As Char In ds9.Tables(0).Rows(iloop).Item(1).ToString
+
+                            If c = " " Then
+                                spaceCount = spaceCount + 1
+                            End If
+
+                        Next
+
+                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+
                             cetakCode4 += subjcode9 & Environment.NewLine
+
                         Else
-                            cetakCode4 += subjcode9 & Environment.NewLine & Environment.NewLine
+
+                            If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 40 And spaceCount > 4 Then
+
+                                cetakCode4 += subjcode9 & Environment.NewLine
+
+                            Else
+
+                                cetakCode4 += subjcode9 & Environment.NewLine & Environment.NewLine
+
+                            End If
+
+
                         End If
 
 
                         cetakSub4 += ds9.Tables(0).Rows(iloop).Item(1).ToString & Environment.NewLine
 
 
-                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 41 Then
+                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+
                             cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
                             cetakGred4 += "    " & strGredV4 & Environment.NewLine 'cell.VerticalAlignment = Element.ALIGN_MIDDLE
+
                         Else
-                            cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine & Environment.NewLine
-                            cetakGred4 += "    " & strGredV4 & Environment.NewLine & Environment.NewLine
+
+                            If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 40 And spaceCount > 4 Then
+
+                                cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
+                                cetakGred4 += "    " & strGredV4 & Environment.NewLine 'cell.VerticalAlignment = Element.ALIGN_MIDDLE
+
+                            Else
+
+                                cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine & Environment.NewLine
+                                cetakGred4 += "    " & strGredV4 & Environment.NewLine & Environment.NewLine
+
+                            End If
+
                         End If
 
 
