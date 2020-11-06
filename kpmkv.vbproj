@@ -193,6 +193,7 @@
     <Content Include="commoncontrol\config_tahun.ascx" />
     <Content Include="commoncontrol\create_user.ascx" />
     <Content Include="commoncontrol\dashboard.ascx" />
+    <Content Include="commoncontrol\error_page.ascx" />
     <Content Include="commoncontrol\gred_bmsetara_create.ascx" />
     <Content Include="commoncontrol\gred_bmsetara_list.ascx" />
     <Content Include="commoncontrol\gred_bmsetara_view.ascx" />
@@ -330,6 +331,7 @@
     <Content Include="config_submenu.aspx" />
     <Content Include="create.user.aspx" />
     <Content Include="DashKursus_view.aspx" />
+    <Content Include="error.page.aspx" />
     <Content Include="FIK_Layak_SVM.aspx" />
     <Content Include="grade.aspx" />
     <Content Include="gred.bmsetara.create.aspx" />
@@ -1131,6 +1133,13 @@
     </Compile>
     <Compile Include="commoncontrol\dashboard.ascx.vb">
       <DependentUpon>dashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commoncontrol\error_page.ascx.designer.vb">
+      <DependentUpon>error_page.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="commoncontrol\error_page.ascx.vb">
+      <DependentUpon>error_page.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="commoncontrol\gred_bmsetara_create.ascx.designer.vb">
@@ -2221,6 +2230,13 @@
       <DependentUpon>default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="error.page.aspx.designer.vb">
+      <DependentUpon>error.page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.page.aspx.vb">
+      <DependentUpon>error.page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="FIK_Layak_SVM.aspx.designer.vb">
       <DependentUpon>FIK_Layak_SVM.aspx</DependentUpon>
     </Compile>
@@ -2933,6 +2949,13 @@
       <DependentUpon>sijil.vok.malaysia.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Site1.Master.designer.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.vb">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="slip.pernyataan.keputusan.aspx.designer.vb">
       <DependentUpon>slip.pernyataan.keputusan.aspx</DependentUpon>
     </Compile>
@@ -3186,6 +3209,7 @@
     <Content Include="packages\AjaxControlToolkit.18.1.0\Content\Web.config.transform" />
     <Content Include="packages\repositories.config" />
     <Content Include="packages\iTextSharp.5.5.13\iTextSharp.5.5.13.nupkg" />
+    <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

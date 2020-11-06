@@ -1589,7 +1589,11 @@ Public Class transkrip_sijil_vok1
 
                         Next
 
-                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+                        If ds9.Tables(0).Rows(iloop).Item(1).ToString = "SISTEM SANITARI,SALIRAN DAN PEMBETUNGAN" Then
+
+                            cetakCode4 += subjcode9 & Environment.NewLine
+
+                        ElseIf ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
 
                             cetakCode4 += subjcode9 & Environment.NewLine
 
@@ -1611,8 +1615,12 @@ Public Class transkrip_sijil_vok1
 
                         cetakSub4 += ds9.Tables(0).Rows(iloop).Item(1).ToString & Environment.NewLine
 
+                        If ds9.Tables(0).Rows(iloop).Item(1).ToString = "SISTEM SANITARI,SALIRAN DAN PEMBETUNGAN" Then
 
-                        If ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
+                            cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
+                            cetakGred4 += "    " & strGredV4 & Environment.NewLine 'cell.VerticalAlignment = Element.ALIGN_MIDDLE
+
+                        ElseIf ds9.Tables(0).Rows(iloop).Item(1).ToString.Length < 38 Then
 
                             cetakJam4 += ds9.Tables(0).Rows(iloop).Item(2).ToString & Environment.NewLine
                             cetakGred4 += "    " & strGredV4 & Environment.NewLine 'cell.VerticalAlignment = Element.ALIGN_MIDDLE

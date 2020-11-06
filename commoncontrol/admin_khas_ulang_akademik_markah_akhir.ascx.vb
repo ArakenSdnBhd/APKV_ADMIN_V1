@@ -362,15 +362,27 @@ Public Class admin_khas_ulang_akademik_markah_akhir
 
 
                 strSQL = "SELECT Mykad FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL += " AND KolejRecordID ='" & lblKolejRecorID.Text & "'"
+                strSQL += " AND IsAKATahun ='" & lblTahun.Text & "'"
+                strSQL += " AND IsAKASesi ='" & lblSesi.Text & "'"
                 strMykad = oCommon.getFieldValue(strSQL)
 
                 strSQL = "SELECT AngkaGiliran FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL += " AND KolejRecordID ='" & lblKolejRecorID.Text & "'"
+                strSQL += " AND IsAKATahun ='" & lblTahun.Text & "'"
+                strSQL += " AND IsAKASesi ='" & lblSesi.Text & "'"
                 strAngkaGiliran = oCommon.getFieldValue(strSQL)
 
                 strSQL = "SELECT Markah FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL += " AND KolejRecordID ='" & lblKolejRecorID.Text & "'"
+                strSQL += " AND IsAKATahun ='" & lblTahun.Text & "'"
+                strSQL += " AND IsAKASesi ='" & lblSesi.Text & "'"
                 strMarkah = oCommon.getFieldValue(strSQL)
 
                 strSQL = "SELECT Catatan FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL += " AND KolejRecordID ='" & lblKolejRecorID.Text & "'"
+                strSQL += " AND IsAKATahun ='" & lblTahun.Text & "'"
+                strSQL += " AND IsAKASesi ='" & lblSesi.Text & "'"
                 strCatatan = oCommon.getFieldValue(strSQL)
 
                 Dim myTableMP8 As New PdfPTable(5)

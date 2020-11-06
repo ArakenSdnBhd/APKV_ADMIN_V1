@@ -1136,7 +1136,7 @@ Public Class admin_FIK_SVM
                 strSQL += " GROUP BY Mykad having Count(Mykad) > 8 "
             End If
 
-                Dim strConn As String = ConfigurationManager.AppSettings("ConnectionString")
+            Dim strConn As String = ConfigurationManager.AppSettings("ConnectionString")
             Dim objConn As SqlConnection = New SqlConnection(strConn)
             Dim sqlDA As New SqlDataAdapter(strSQL, objConn)
 

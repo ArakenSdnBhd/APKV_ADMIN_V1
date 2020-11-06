@@ -12,6 +12,8 @@ Public Class pelajar_tangguh_update
 
     Dim strKursusID As String = ""
 
+    Dim Decrypted As String = oCommon.Decrypt(Request.QueryString("PelajarID").Trim())
+
     Dim strConn As String = ConfigurationManager.AppSettings("ConnectionString")
     Dim objConn As SqlConnection = New SqlConnection(strConn)
 
@@ -20,9 +22,9 @@ Public Class pelajar_tangguh_update
         Try
             If Not IsPostBack Then
 
-                strSQL = "SELECT kpmkv_kolej.Nama,kpmkv_kolej.RecordID FROM kpmkv_kolej LEFT OUTER JOIN kpmkv_pelajar ON kpmkv_kolej.RecordID=kpmkv_pelajar.KolejRecordID  WHERE kpmkv_pelajar.PelajarID='" & Request.QueryString("PelajarID") & "'"
+                strSQL = "SELECT kpmkv_kolej.Nama,kpmkv_kolej.RecordID FROM kpmkv_kolej LEFT OUTER JOIN kpmkv_pelajar ON kpmkv_kolej.RecordID=kpmkv_pelajar.KolejRecordID  WHERE kpmkv_pelajar.PelajarID='" & Decrypted & "'"
                 lblKolej.Text = oCommon.getFieldValue(strSQL)
-                strSQL = "SELECT kpmkv_kolej.RecordID FROM kpmkv_kolej LEFT OUTER JOIN kpmkv_pelajar ON kpmkv_kolej.RecordID=kpmkv_pelajar.KolejRecordID  WHERE kpmkv_pelajar.PelajarID='" & Request.QueryString("PelajarID") & "'"
+                strSQL = "SELECT kpmkv_kolej.RecordID FROM kpmkv_kolej LEFT OUTER JOIN kpmkv_pelajar ON kpmkv_kolej.RecordID=kpmkv_pelajar.KolejRecordID  WHERE kpmkv_pelajar.PelajarID='" & Decrypted & "'"
                 lblRecordID.Text = oCommon.getFieldValue(strSQL)
                
 
@@ -103,7 +105,7 @@ Public Class pelajar_tangguh_update
         strSQL += " kpmkv_status ON kpmkv_pelajar.StatusID = kpmkv_status.StatusID LEFT OUTER JOIN kpmkv_kelas ON kpmkv_pelajar.KelasID = kpmkv_kelas.KelasID"
         strSQL += " LEFT OUTER JOIN kpmkv_jeniscalon ON kpmkv_pelajar.JenisCalonID = kpmkv_jeniscalon.JenisCalonID "
         strSQL += "LEFT OUTER JOIN kpmkv_kluster ON kpmkv_pelajar.KursusID=kpmkv_kluster.KlusterID"
-        strSQL += " WHERE kpmkv_pelajar.PelajarID='" & Request.QueryString("PelajarID") & "'"
+        strSQL += " WHERE kpmkv_pelajar.PelajarID='" & Decrypted & "'"
         Dim strConn As String = ConfigurationManager.AppSettings("ConnectionString")
         Dim objConn As SqlConnection = New SqlConnection(strConn)
         Dim sqlDA As New SqlDataAdapter(strSQL, objConn)
@@ -274,7 +276,7 @@ Public Class pelajar_tangguh_update
         Return True
     End Function
     Private Function kpmkv_pelajar_create() As Boolean
-        strSQL = "SELECT KursusID FROM kpmkv_pelajar WHERE PelajarID='" & Request.QueryString("PelajarID") & "'"
+        strSQL = "SELECT KursusID FROM kpmkv_pelajar WHERE PelajarID='" & Decrypted & "'"
         strKursusID = oCommon.getFieldValue(strSQL)
 
         'insert table pelajar
@@ -295,7 +297,7 @@ Public Class pelajar_tangguh_update
             strSQL += "'" & ddlTahun.SelectedValue & "','" & ddlSemester.SelectedValue & "','" & chkSesi.Text & "')"
             strRet = oCommon.ExecuteSQL(strSQL)
 
-            strSQL = "UPDATE kpmkv_pelajar SET StatusID ='4' WHERE PelajarID='" & Request.QueryString("PelajarID") & "'"
+            strSQL = "UPDATE kpmkv_pelajar SET StatusID ='4' WHERE PelajarID='" & Decrypted & "'"
             strRet = oCommon.ExecuteSQL(strSQL)
 
             Return True

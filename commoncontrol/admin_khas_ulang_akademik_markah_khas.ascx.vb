@@ -113,28 +113,53 @@ Public Class admin_khas_ulang_akademik_markah_khas
 
             objConn.Open()
             If lblType.Text = "ADMIN" Then
-                strSQL = "INSERT into kpmkv_markah_khas_akademik(Mykad,AngkaGiliran,KodKursus,MataPelajaran,Markah,Catatan,PemeriksaID,Tahun) values('" & strMykad & "','" & strAngkaGiliran & "','" & strKodKursus & "','" & strMataPelajaran & "','" & strMarkah & "','" & strCatatan & "','" & lblID.Text & "','" & Now.Year & "')"
+                strSQL = "INSERT into kpmkv_markah_khas_akademik(Mykad,AngkaGiliran,KodKursus,MataPelajaran,Markah,Catatan,PemeriksaID,Tahun) values(@Mykad, @AngkaGiliran, @KodKursus, @MataPelajaran, @Markah, @Catatan, @PemeriksaID, @Tahun)"
             Else
                 strSQL = "INSERT into kpmkv_markah_khas_akademik(Mykad,AngkaGiliran,KodKursus,MataPelajaran,Markah,Catatan,PemeriksaID,Tahun) values('" & strMykad & "','" & strAngkaGiliran & "','" & strKodKursus & "','" & strMataPelajaran & "','" & strMarkah & "','" & strCatatan & "','" & lblID.Text & "','" & Now.Year & "')"
             End If
 
-            Dim cmd As New SqlCommand(strSQL, objConn)
+            Using cmd As New SqlCommand(strSQL)
+                Using sda As New SqlDataAdapter()
+                    cmd.Connection = objConn
+                    cmd.Parameters.AddWithValue("@Mykad", strMykad)
+                    cmd.Parameters.AddWithValue("@AngkaGiliran", strAngkaGiliran)
+                    cmd.Parameters.AddWithValue("@KodKursus", strKodKursus)
+                    cmd.Parameters.AddWithValue("@MataPelajaran", strMataPelajaran)
+                    cmd.Parameters.AddWithValue("@Markah", strMarkah)
+                    cmd.Parameters.AddWithValue("@Catatan", strCatatan)
+                    cmd.Parameters.AddWithValue("@PemeriksaID", lblID.Text)
+                    cmd.Parameters.AddWithValue("@Tahun", Now.Year)
+                    sda.SelectCommand = cmd
 
-            Dim result As Integer = cmd.ExecuteNonQuery()
-            objConn.Close()
-            If result = 1 Then
-                loadStores()
+                    Dim result As Integer = cmd.ExecuteNonQuery()
+                    objConn.Close()
+                    If result = 1 Then
+                        loadStores()
 
-                lblMsg.Text = inMykad.Text + "      Berjaya......    "
-            Else
+                        lblMsg.Text = inMykad.Text + "      Berjaya......    "
+                    Else
 
-                lblMsg.Text = inMykad.Text + " Tidak Berjaya....."
-            End If
+                        lblMsg.Text = inMykad.Text + " Tidak Berjaya....."
+                    End If
+
+                End Using
+            End Using
+
+            'Dim cmd As New SqlCommand(strSQL, objConn)
+
+            'Dim result As Integer = cmd.ExecuteNonQuery()
+            'objConn.Close()
+            'If result = 1 Then
+            '    loadStores()
+
+            '    lblMsg.Text = inMykad.Text + "      Berjaya......    "
+            'Else
+
+            '    lblMsg.Text = inMykad.Text + " Tidak Berjaya....."
+            'End If
+
         End If
     End Sub
-
-
-
 
     Protected Sub btnCetak_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCetak.Click
         Dim myDocument As New Document(PageSize.A4)

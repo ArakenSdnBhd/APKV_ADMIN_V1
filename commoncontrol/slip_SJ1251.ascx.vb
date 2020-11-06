@@ -216,8 +216,13 @@ Public Class slip_SJ1251
         strWhere = "    WHERE
                         kpmkv_pelajar_Akademik_Ulang.Tahun = '" & ddlTahun.Text & "'
                         AND kpmkv_pelajar_Akademik_Ulang.Sesi = '" & chkSesi.Text & "'
-                        AND kpmkv_pelajar_Akademik_Ulang.IsAKATahun = '" & ddlTahunPeperiksaan.Text & "'
-                        AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+                        AND kpmkv_pelajar_Akademik_Ulang.IsAKATahun = '" & ddlTahunPeperiksaan.Text & "'"
+
+        If ddlStatus.Text = "LULUS" Then
+            strWhere += "   AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+        Else
+            strWhere += "   AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+        End If
 
         If Not ddlKolej.Text = "-PILIH-" Then
             strWhere += "   AND kpmkv_pelajar_Akademik_Ulang.KolejRecordID = '" & ddlKolej.SelectedValue & "'"
@@ -226,7 +231,7 @@ Public Class slip_SJ1251
 
         getSQL = tmpSQL & strWhere & strOrder
         ''--debug
-        'Response.Write(getSQL)
+        Debug.WriteLine(getSQL)
 
         Return getSQL
 
@@ -297,13 +302,16 @@ Public Class slip_SJ1251
                         LEFT JOIN kpmkv_kursus ON kpmkv_kursus.KodKursus = kpmkv_pelajar_Akademik_Ulang.KodKursus
                         LEFT JOIN kpmkv_kluster ON kpmkv_kluster.KlusterID = kpmkv_kursus.KlusterID"
 
-            strSQL += " WHERE
+            strSQL += "    WHERE
                         kpmkv_pelajar_Akademik_Ulang.Tahun = '" & ddlTahun.Text & "'
                         AND kpmkv_pelajar_Akademik_Ulang.Sesi = '" & chkSesi.Text & "'
-                        AND kpmkv_pelajar_Akademik_Ulang.IsAKATahun = '" & ddlTahunPeperiksaan.Text & "'
-                        AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+                        AND kpmkv_pelajar_Akademik_Ulang.IsAKATahun = '" & ddlTahunPeperiksaan.Text & "'"
 
-
+            If ddlStatus.Text = "LULUS" Then
+                strSQL += "   AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+            Else
+                strSQL += "   AND kpmkv_pelajar_Akademik_Ulang.Kompetensi = '" & ddlStatus.Text & "'"
+            End If
 
             If Not ddlKolej.Text = "-PILIH-" Then
                 strSQL += "   AND kpmkv_pelajar_Akademik_Ulang.KolejRecordID = '" & ddlKolej.SelectedValue & "'"
@@ -644,6 +652,7 @@ Public Class slip_SJ1251
                     strSQL = "SELECT Kompetensi from kpmkv_pelajar_Akademik_Ulang where AngkaGiliran = '" & strAG & "'"
                     strSQL += " AND Tahun='" & ddlTahun.Text & "'"
                     strSQL += " AND Sesi='" & chkSesi.Text & "'"
+                    strSQL += " AND IsAKATahun='" & ddlTahunPeperiksaan.Text & "'"
                     Dim strKompetensi As String = oCommon.getFieldValue(strSQL)
                     If strKompetensi = "" Then
                         strKompetensi = ""
@@ -709,8 +718,8 @@ Public Class slip_SJ1251
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     Dim imgHeader As Image = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(20)
-                    imgHeader.SetAbsolutePosition(355, 170)
+                    imgHeader.ScalePercent(23)
+                    imgHeader.SetAbsolutePosition(355, 75)
 
                     myDocument.Add(imgHeader)
 
@@ -722,8 +731,8 @@ Public Class slip_SJ1251
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     imgHeader = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(36)
-                    imgHeader.SetAbsolutePosition(85, 80)
+                    imgHeader.ScalePercent(37)
+                    imgHeader.SetAbsolutePosition(35, 10)
 
                     myDocument.Add(imgHeader)
 

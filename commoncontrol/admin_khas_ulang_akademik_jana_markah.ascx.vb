@@ -184,7 +184,7 @@ Public Class admin_khas_ulang_akademik_jana_markah
         Dim strOrder As String = " ORDER BY AngkaGiliran"
 
         '--not deleted
-        tmpSQL = "SELECT PelajarID,AngkaGiliran,Mykad,Markah,Catatan FROM kpmkv_pelajar_Akademik_Ulang"
+        tmpSQL = "SELECT PelajarAKAID, PelajarID,AngkaGiliran,Mykad,Markah,Catatan FROM kpmkv_pelajar_Akademik_Ulang"
         tmpSQL += " WHERE IsDeleted='N' AND IsCalon='1'"
         tmpSQL += " AND KolejRecordID ='" & ddlKodPusat.SelectedValue & "'"
         tmpSQL += " AND IsAKATahun ='" & ddlTahun.Text & "'"
@@ -420,10 +420,10 @@ Public Class admin_khas_ulang_akademik_jana_markah
                 'set RPN
 
 
-                strSQL = "SELECT Mykad FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL = "SELECT Mykad FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarAKAID='" & dt.Rows(i)("PelajarAKAID").ToString() & "'"
                 strMykad = oCommon.getFieldValue(strSQL)
 
-                strSQL = "SELECT AngkaGiliran FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarID='" & dt.Rows(i)("PelajarID").ToString() & "'"
+                strSQL = "SELECT AngkaGiliran FROM kpmkv_pelajar_Akademik_Ulang WHERE PelajarAKAID='" & dt.Rows(i)("PelajarAKAID").ToString() & "'"
                 strAngkaGiliran = oCommon.getFieldValue(strSQL)
 
                 Dim myTableMP8 As New PdfPTable(5)

@@ -27,7 +27,39 @@ Public Class pelajar_tangguh1
 
     Protected Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSearch.Click
         lblMsg.Text = ""
-        strRet = BindData(datRespondent)
+        BindGrid()
+
+    End Sub
+
+    Private Sub BindGrid()
+
+        Using cmd As New SqlCommand(getSQL)
+            Using sda As New SqlDataAdapter()
+                cmd.Connection = objConn
+                cmd.Parameters.AddWithValue("@MYKAD", txtMykad.Text)
+                sda.SelectCommand = cmd
+                Using dt As New DataTable()
+
+                    sda.Fill(dt)
+
+                    datRespondent.DataSource = dt
+                    datRespondent.DataBind()
+
+                    If dt.Rows.Count = 0 Then
+
+                        divMsg.Attributes("class") = "error"
+                        lblMsg.Text = "Rekod tidak dijumpai!"
+
+                    Else
+
+                        divMsg.Attributes("class") = "info"
+                        lblMsg.Text = "Jumlah Rekod#:" & dt.Rows.Count
+
+                    End If
+
+                End Using
+            End Using
+        End Using
 
     End Sub
 
@@ -62,13 +94,13 @@ Public Class pelajar_tangguh1
     Private Function getSQL() As String
         Dim tmpSQL As String
         Dim strWhere As String = ""
-        Dim strOrder As String = "ORDER BY Tahun DESC"
+        Dim strOrder As String = " ORDER BY Tahun DESC"
         tmpSQL = "SELECT * from kpmkv_pelajar LEFT JOIN kpmkv_status ON kpmkv_pelajar.StatusID = kpmkv_status.StatusID"
-        tmpSQL += " WHERE kpmkv_pelajar.StatusID='3'"
+        tmpSQL += " WHERE kpmkv_pelajar.StatusID = '3'"
 
         '--Negeri
         If Not txtMykad.Text = "" Then
-            strWhere += " AND MYKAD='" & txtMykad.Text & "'"
+            strWhere += " AND MYKAD = @MYKAD "
         End If
 
         getSQL = tmpSQL & strWhere & strOrder
@@ -108,7 +140,7 @@ Public Class pelajar_tangguh1
 
     Private Sub datRespondent_SelectedIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSelectEventArgs) Handles datRespondent.SelectedIndexChanging
         Dim strKeyID As String = datRespondent.DataKeys(e.NewSelectedIndex).Value.ToString
-        Response.Redirect("pelajar.tangguh.update.aspx?PelajarID=" & strKeyID)
+        Response.Redirect("pelajar.tangguh.update.aspx?PelajarID=" & HttpUtility.UrlEncode(oCommon.Encrypt(strKeyID.Trim())))
 
     End Sub
 

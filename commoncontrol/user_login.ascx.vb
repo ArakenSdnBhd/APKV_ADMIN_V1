@@ -32,7 +32,6 @@ Partial Public Class user_login
 
             If isValidLogin() = True Then
 
-
                 strSQL = "SELECT kpmkv_users.Nama,kpmkv_users.Negeri,tbl_ctrl_usergroup.UserGroupCode FROM kpmkv_users  "
                 strSQL += " LEFT OUTER JOIN tbl_ctrl_usergroup ON kpmkv_users.Usertype=tbl_ctrl_usergroup.UserGroup "
                 strSQL += "WHERE LoginID='" & oCommon.FixSingleQuotes(txtLoginID.Text) & "' AND Pwd='" & oCommon.FixSingleQuotes(txtPwd.Text) & "'"

@@ -14,8 +14,6 @@
         </td>
     </tr>
 
-    
-    test
     <tr>
         <td style="width: 20%;">Tahun Peperiksaan:</td>
         <td>
@@ -45,8 +43,8 @@
         <td style="width: 20%;">Status:</td>
         <td>
             <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="false" Width="200px">
-                <asp:ListItem Value = "LULUS">LULUS</asp:ListItem>
-                <asp:ListItem Value = "GAGAL">GAGAL</asp:ListItem>
+                <asp:ListItem Value="LULUS">LULUS</asp:ListItem>
+                <asp:ListItem Value="GAGAL">GAGAL</asp:ListItem>
             </asp:DropDownList>
         </td>
     </tr>
@@ -150,15 +148,15 @@
                         </ItemTemplate>
                         <HeaderStyle HorizontalAlign="Left" VerticalAlign="Top" />
                         <ItemStyle VerticalAlign="Middle" />
-                    </asp:TemplateField>    
-                     <asp:TemplateField HeaderText="Nama Kolej">
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nama Kolej">
                         <ItemTemplate>
                             <asp:Label ID="namaKolej" runat="server" Text='<%# Bind("namaKolej")%>'></asp:Label>
                         </ItemTemplate>
                         <HeaderStyle HorizontalAlign="Left" VerticalAlign="Top" />
                         <ItemStyle VerticalAlign="Middle" />
                     </asp:TemplateField>
-                    
+
                     <asp:TemplateField HeaderText="status">
                         <ItemTemplate>
                             <asp:Label ID="lblStatusCetak" runat="server"></asp:Label>
