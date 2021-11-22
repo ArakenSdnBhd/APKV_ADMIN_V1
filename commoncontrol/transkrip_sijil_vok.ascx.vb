@@ -395,9 +395,10 @@ Public Class transkrip_sijil_vok1
     End Sub
 
     Protected Sub btnPrintSlip_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnPrintSlip.Click
-        Dim myDocument As New Document(PageSize.A4)
+        Dim myDocument As New Document(PageSize.LETTER)
 
         Try
+
             HttpContext.Current.Response.ContentType = "application/pdf"
             HttpContext.Current.Response.AddHeader("content-disposition", "attachment;filename=TranskripSijilVokMalaysia.pdf")
             HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache)
@@ -516,6 +517,7 @@ Public Class transkrip_sijil_vok1
                     myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
+                    myDocument.Add(imgSpacing)
 
                     'Transkrip Sijil Vokasional Malaysia
                     Dim fontPath As String = String.Concat(Server.MapPath("~/font/"))
@@ -525,7 +527,7 @@ Public Class transkrip_sijil_vok1
 
                     Dim table As New PdfPTable(1)
                     Dim myPara001 As New Paragraph()
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({100})
                     table.DefaultCell.Border = 0
 
@@ -537,7 +539,7 @@ Public Class transkrip_sijil_vok1
 
                     myDocument.Add(table)
 
-                    myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
 
 
@@ -545,44 +547,9 @@ Public Class transkrip_sijil_vok1
 
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-                    'table = New PdfPTable(2)
-
-                    'table.WidthPercentage = 103
-                    'table.SetWidths({30, 70})
-
-
-                    'Dim cell = New PdfPcell()
-                    'Dim cetak = Environment.NewLine & "NAMA"
-                    'cetak += Environment.NewLine & "NO.KAD PENGENALAN"
-                    'cetak += Environment.NewLine & "ANGKA GILIRAN"
-                    'cetak += Environment.NewLine & "INSTITUSI"
-                    'cetak += Environment.NewLine & "KLUSTER"
-                    'cetak += Environment.NewLine & "KURSUS"
-                    'cetak += Environment.NewLine & ""
-
-                    'cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 9)))
-                    'cell.Border = 0
-                    'table.Addcell(cell)
-
-                    'cell = New PdfPcell()
-                    'cetak = Environment.NewLine & ":  " & strname
-                    'cetak += Environment.NewLine & ":  " & strmykad
-                    'cetak += Environment.NewLine & ":  " & strag
-                    'cetak += Environment.NewLine & ":  " & strKolejnama
-                    'cetak += Environment.NewLine & ":  " & strbidang
-                    'cetak += Environment.NewLine & ":  " & strprogram & " (" & strkodKursus & ")"
-                    'cetak += Environment.NewLine & " "
-
-                    'cell.AddElement(New Paragraph(cetak, FontFactory.GetFont("Arial", 9)))
-                    'cell.Border = 0
-                    'table.Addcell(cell)
-                    'Debug.WriteLine(cetak)
-
-                    'myDocument.Add(table)
-
                     ''NAMA
                     table = New PdfPTable(2)
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -605,7 +572,7 @@ Public Class transkrip_sijil_vok1
                     ''NO. KAD PENGENALAN
                     table = New PdfPTable(2)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -627,7 +594,7 @@ Public Class transkrip_sijil_vok1
                     ''ANGKA GILIRAN
                     table = New PdfPTable(2)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -649,7 +616,7 @@ Public Class transkrip_sijil_vok1
                     ''INSTITUSI
                     table = New PdfPTable(2)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -671,7 +638,7 @@ Public Class transkrip_sijil_vok1
                     ''KLUSTER
                     table = New PdfPTable(2)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -693,7 +660,7 @@ Public Class transkrip_sijil_vok1
                     ''KURSUS
                     table = New PdfPTable(2)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({30, 70})
 
 
@@ -755,7 +722,7 @@ Public Class transkrip_sijil_vok1
                     '''''header sem 1 & 2''''''''''''''''''''''''''''''''''''''''''
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({35, 11, 7, 7, 35, 11, 7, 6})
 
                     cell = New PdfPCell()
@@ -811,7 +778,7 @@ Public Class transkrip_sijil_vok1
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({11, 35, 7, 7, 11, 35, 7, 6})
 
                     cell = New PdfPCell()
@@ -876,7 +843,7 @@ Public Class transkrip_sijil_vok1
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     ''matapelajaran sem 1 & 2
                     table = New PdfPTable(8)
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({11, 35, 7, 7, 11, 35, 7, 6})
                     table.DefaultCell.Border = 0
 
@@ -1157,7 +1124,7 @@ Public Class transkrip_sijil_vok1
 
                     myDocument.Add(table)
 
-                    myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
 
@@ -1197,7 +1164,7 @@ Public Class transkrip_sijil_vok1
                     '''''header sem 3 & 4''''''''''''''''''''''''''''''''''''''''''
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({35, 11, 7, 7, 35, 11, 7, 6})
 
                     cell = New PdfPCell()
@@ -1253,7 +1220,7 @@ Public Class transkrip_sijil_vok1
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({11, 35, 7, 7, 11, 35, 7, 6})
 
                     cell = New PdfPCell()
@@ -1316,7 +1283,7 @@ Public Class transkrip_sijil_vok1
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     ''matapelajaran sem 3 & 4
                     table = New PdfPTable(8)
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({11, 35, 7, 7, 11, 35, 7, 6})
                     table.DefaultCell.Border = 0
 
@@ -1691,12 +1658,12 @@ Public Class transkrip_sijil_vok1
 
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-                    myDocument.Add(imgSpacing)
+                    'myDocument.Add(imgSpacing)
                     myDocument.Add(imgSpacing)
 
                     ''line image
                     table = New PdfPTable(1)
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({100})
 
                     cell = New PdfPCell()
@@ -1730,7 +1697,7 @@ Public Class transkrip_sijil_vok1
 
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({20, 5, 10, 10, 30, 5, 10, 10})
 
                     cell = New PdfPCell()
@@ -1847,7 +1814,7 @@ Public Class transkrip_sijil_vok1
 
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({20, 5, 10, 10, 30, 5, 10, 10})
 
                     cell = New PdfPCell()
@@ -1936,7 +1903,7 @@ Public Class transkrip_sijil_vok1
 
                     table = New PdfPTable(8)
 
-                    table.WidthPercentage = 103
+                    table.WidthPercentage = 100
                     table.SetWidths({20, 5, 10, 10, 30, 5, 10, 10})
 
                     cell = New PdfPCell()
@@ -1994,6 +1961,16 @@ Public Class transkrip_sijil_vok1
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                     myDocument.Add(imgSpacing)
 
+                    strSQL = "SELECT signature_scale, signature_pos_x, signature_pos_y FROM tbl_signature WHERE signature_type = 'transkrip'"
+                    strRet = oCommon.getFieldValueEx(strSQL)
+
+                    Dim sign_measure As Array
+                    sign_measure = strRet.Split("|")
+
+                    Dim signScale As Integer = sign_measure(0)
+                    Dim signX As Integer = sign_measure(1)
+                    Dim signY As Integer = sign_measure(2)
+
                     strSQL = " Select FileLocation FROM kpmkv_config_pengarahPeperiksaan WHERE ID='" & ddlSign.SelectedValue & "'"
                     Dim FullFileName As String = oCommon.getFieldValue(strSQL)
 
@@ -2001,8 +1978,8 @@ Public Class transkrip_sijil_vok1
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     Dim imgHeader As Image = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(19)
-                    imgHeader.SetAbsolutePosition(410, 30)
+                    imgHeader.ScalePercent(signScale)
+                    imgHeader.SetAbsolutePosition(signX, signY)
 
                     myDocument.Add(imgHeader)
 
