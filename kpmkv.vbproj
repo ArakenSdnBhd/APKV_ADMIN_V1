@@ -50,8 +50,12 @@
     <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
@@ -149,12 +153,11 @@
     <Content Include="admin.wajaran.search.aspx" />
     <Content Include="admin.wajaranvokasional.search.aspx" />
     <Content Include="admin_data_transkrip.aspx" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
     <Content Include="bin\itextsharp.dll" />
     <Content Include="bin\kpmkv.dll" />
     <Content Include="bin\kpmkv.pdb" />
     <Content Include="bin\kpmkv.xml" />
-    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
-    <Content Include="bin\RKLib.ExportData.dll" />
     <Content Include="bin\stdole.dll" />
     <Content Include="BMSETARADash.aspx" />
     <Content Include="commoncontrol\admin_accessright.ascx" />
@@ -431,14 +434,44 @@
     <Content Include="obj\Release\Package\PackageTmp\admin.wajaran.search.aspx" />
     <Content Include="obj\Release\Package\PackageTmp\admin.wajaranvokasional.search.aspx" />
     <Content Include="obj\Release\Package\PackageTmp\bin\kpmkv.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_accessright.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_borang_markah_khas.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_data_transkrip.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_FIK_SVM.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_gred.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik_jana_markah.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik_markah.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik_markah_akhir.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik_markah_khas.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_khas_ulang_akademik_pemeriksa.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportBMSetara.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportFIK.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportKursus.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportKursus_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportKV.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportNegeri.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\admin_reportNegeriKV.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\angkagiliran.create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\BS_arahan_penilaian_akhir.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\BS_jadual_waktu.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_agama.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_bangsa.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_bmsetara.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_jantina.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_jenis_kolej.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_kaum.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_kumpulan_pengguna.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_menu.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_menu_utama.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_semester.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_sesi.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_submenu.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\config_tahun.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\contact_us.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\create_user.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\dashboard.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\error_page.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\gred_bmsetara_create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\gred_bmsetara_list.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\gred_bmsetara_update.ascx" />
@@ -457,6 +490,7 @@
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kelas.update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kelas.view.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kelas_kursus.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kelas_pensyarah_akademik.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kluster.create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kluster.import.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kluster.list.ascx" />
@@ -464,9 +498,20 @@
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kluster.update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kluster.view.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej.kursus.list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_markah_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_search.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_view_header.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kolej_view_master.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kpmkv_intro.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus.list.by.year.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus.popup.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_import.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_kolej_create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_list.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_search.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\kursus_update.ascx" />
@@ -477,7 +522,14 @@
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah.create.PBA.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah.create.PBV.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah.ulang.akademik.insert.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah.ulang.vokasional.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah.vokasional.list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_bmsetara.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_bmsetara_kertas1.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_bmsetara_kertas2.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_import.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\markah_update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\matapelajaran.pensyarah.create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\matapelajaran_create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\matapelajaran_list.ascx" />
@@ -493,10 +545,27 @@
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\modul_view.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar.ulang.akademik.view.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar.ulang.vokasional.view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_import.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_kolej_history.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_markah_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_search.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_tangguh.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_tangguh_update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_ulang_akademik.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_ulang_vokasional.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pelajar_view_header.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\penetapan_pemeriksa_bmsetara.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_list_pub.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_view_pub.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengumuman_view_top.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pengurusan_semester_calon.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pensyarah.kursus.list.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pensyarah_create.ascx" />
@@ -504,7 +573,35 @@
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pensyarah_search.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pensyarah_update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pensyarah_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pentaksiran_roster.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pentaksiran_sijil_vokasional.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\pentaksiran_vokasional.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\permohonan.berpindah.pensyarah.create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\permohonan.berpindah.pensyarah.update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\permohonan.pindah.create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\permohonan.pindah.update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\prm_pengarahPeperiksaan.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\prm_tahun.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\sijil_vok_malaysia.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\slip_BM1104.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\slip_sijilvokasionalmalaysia.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\slip_SJ1251.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\slip_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\svm_pengesahan.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\takwim_create.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\takwim_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\takwim_list_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\takwim_update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\takwim_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\tbl_usergroupmenu.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\transkrip_sijil_vok.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\users_search.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_change_password.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_list.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_login.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_update.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_view.ascx" />
+    <Content Include="obj\Release\Package\PackageTmp\commoncontrol\user_view_master.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\wajaranakademik_create.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\wajaranakademik_update.ascx" />
     <Content Include="obj\Release\Package\PackageTmp\commoncontrol\wajaranakademik_view.ascx" />
@@ -528,14 +625,18 @@
     <Content Include="obj\Release\Package\PackageTmp\gred.create.aspx" />
     <Content Include="obj\Release\Package\PackageTmp\gred.update.aspx" />
     <Content Include="obj\Release\Package\PackageTmp\gred.view.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\sijil.vok.malaysia.aspx" />
     <Content Include="obj\Release\TempPE\My Project.Resources.Designer.vb.dll" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
-    <Content Include="packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll" />
-    <Content Include="packages\AjaxControlToolkit.18.1.0\readme.txt" />
-    <Content Include="packages\iTextSharp.5.5.13\AGPL.txt" />
-    <Content Include="packages\iTextSharp.5.5.13\lib\itextsharp.dll" />
-    <Content Include="packages\iTextSharp.5.5.13\lib\iTextSharp.xml" />
-    <Content Include="packages\iTextSharp.5.5.13\notice.txt" />
+    <Content Include="packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll" />
+    <Content Include="packages\AjaxControlToolkit.20.1.0\readme.txt" />
+    <Content Include="packages\BouncyCastle.1.8.9\.signature.p7s" />
+    <Content Include="packages\BouncyCastle.1.8.9\BouncyCastle.1.8.9.nupkg" />
+    <Content Include="packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll" />
+    <Content Include="packages\BouncyCastle.1.8.9\README.md" />
+    <Content Include="packages\iTextSharp.5.5.13.2\lib\itextsharp.dll" />
+    <Content Include="packages\iTextSharp.5.5.13.2\lib\iTextSharp.xml" />
+    <Content Include="packages\iTextSharp.5.5.13.2\notice.txt" />
     <Content Include="pelajar.angkagiliran.aspx" />
     <Content Include="pelajar.create.aspx" />
     <Content Include="pelajar.import.aspx" />
@@ -3197,19 +3298,23 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferences.cache" />
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Release\kpmkv.vbproj.GenerateResource.Cache" />
-    <Content Include="packages.config" />
     <Content Include="sample_data\PELAJARIMPORT2.xlsx" />
     <Content Include="sample_data\PELAJARUlang.xlsx" />
     <Content Include="sample_data\PENSYARAHIMPORT.xlsx" />
     <Content Include="sample_data\PELAJARIMPORT.xlsx" />
-    <Content Include="packages\AjaxControlToolkit.18.1.0\AjaxControlToolkit.18.1.0.nupkg" />
-    <Content Include="packages\AjaxControlToolkit.18.1.0\Content\Web.config.transform" />
-    <Content Include="packages\repositories.config" />
-    <Content Include="packages\iTextSharp.5.5.13\iTextSharp.5.5.13.nupkg" />
     <Content Include="Site1.Master" />
+    <Content Include="obj\Release\kpmkv.vbproj.CopyComplete" />
+    <Content Include="obj\Release\kpmkv.vbproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\kpmkv.vbprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <Content Include="packages\AjaxControlToolkit.20.1.0\.signature.p7s" />
+    <Content Include="packages\AjaxControlToolkit.20.1.0\AjaxControlToolkit.20.1.0.nupkg" />
+    <Content Include="packages\AjaxControlToolkit.20.1.0\Content\Web.config.transform" />
+    <Content Include="packages\iTextSharp.5.5.13.2\.signature.p7s" />
+    <Content Include="packages\iTextSharp.5.5.13.2\gnu-agpl-v3.0.md" />
+    <Content Include="packages\iTextSharp.5.5.13.2\iTextSharp.5.5.13.2.nupkg" />
+    <Content Include="packages\iTextSharp.5.5.13.2\LICENSE.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

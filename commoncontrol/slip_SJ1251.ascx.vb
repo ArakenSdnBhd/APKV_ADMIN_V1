@@ -389,7 +389,7 @@ Public Class slip_SJ1251
                     ''getting data end
 
                     Dim table As New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({42, 16, 42})
                     table.DefaultCell.Border = 0
 
@@ -414,7 +414,7 @@ Public Class slip_SJ1251
                     Dim cetak = Environment.NewLine & ""
 
                     table = New PdfPTable(1)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({100})
 
                     ''timesbd font
@@ -441,7 +441,7 @@ Public Class slip_SJ1251
 
                     ''NAMA
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -469,7 +469,7 @@ Public Class slip_SJ1251
 
                     ''NO. KAD PENGENALAN
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -497,7 +497,7 @@ Public Class slip_SJ1251
 
                     ''ANGKA GILIRAN
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -525,7 +525,7 @@ Public Class slip_SJ1251
 
                     ''INSTITUSI
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -550,7 +550,7 @@ Public Class slip_SJ1251
 
                     ''BIDANG
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -578,7 +578,7 @@ Public Class slip_SJ1251
 
                     ''PROGRAM
                     table = New PdfPTable(3)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 3, 67})
 
                     cell = New PdfPCell()
@@ -614,7 +614,7 @@ Public Class slip_SJ1251
                     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                     table = New PdfPTable(5)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 4, 50, 18, 1})
 
                     cell = New PdfPCell()
@@ -660,7 +660,7 @@ Public Class slip_SJ1251
 
 
                     table = New PdfPTable(5)
-                    table.WidthPercentage = 100
+                    table.WidthPercentage = 102
                     table.SetWidths({30, 4, 50, 18, 1})
 
                     cell = New PdfPCell()
@@ -710,6 +710,16 @@ Public Class slip_SJ1251
                     'myDocument.Add(imgSpacing)
                     'myDocument.Add(imgSpacing)
 
+                    strSQL = "SELECT signature_scale, signature_pos_x, signature_pos_y FROM tbl_signature WHERE signature_type = 'slipSJ'"
+                    strRet = oCommon.getFieldValueEx(strSQL)
+
+                    Dim sign_measure As Array
+                    sign_measure = strRet.Split("|")
+
+                    Dim signScale As Integer = sign_measure(0)
+                    Dim signX As Integer = sign_measure(1)
+                    Dim signY As Integer = sign_measure(2)
+
                     ''TT
                     strSQL = " Select FileLocation FROM kpmkv_config_pengarahPeperiksaan WHERE ID='" & ddlSign.SelectedValue & "'"
                     Dim FullFileName As String = oCommon.getFieldValue(strSQL)
@@ -718,8 +728,8 @@ Public Class slip_SJ1251
 
                     'Dim imageHeader As String = Server.MapPath(fileSavePath)
                     Dim imgHeader As Image = Image.GetInstance(imageHeader)
-                    imgHeader.ScalePercent(23)
-                    imgHeader.SetAbsolutePosition(355, 75)
+                    imgHeader.ScalePercent(signScale)
+                    imgHeader.SetAbsolutePosition(signX, signY)
 
                     myDocument.Add(imgHeader)
 
